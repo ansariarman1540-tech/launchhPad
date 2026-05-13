@@ -22,19 +22,61 @@ const ContactSchema = z.object({
     .string()
     .min(20, "Tell us a bit more (20+ characters).")
     .max(4000, "That is plenty. Trim to under 4000 characters."),
-});export type ContactFormState = {
+});
+
+export type ContactFormState = {
   ok: boolean;
   message: string;
   fieldErrors?: Partial<Record<keyof z.infer<typeof ContactSchema>, string>>;
 };
 
 /**
- * Lead submission shape used for the (currently logged) integration handoff.
- * When wiring Resend, pass this object straight into the email template.
+ * Lead submission shape used for the integration handoff.
+ * Resend receives this as the email body when `RESEND_API_KEY` is set.
  */
 export type ContactLead = z.infer<typeof ContactSchema> & {
   receivedAt: string;
 };
+
+/**
+ * Send the lead notification email via Resend.
+ * Gracefully no-ops when the API key is missing (dev/preview environments).
+ */
+async function sendLeadEmail(lead: ContactLead): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.log("[contact] RESEND_API_KEY not set — skipping email send.");
+    return;
+  }
+
+  // Dynamic import keeps Resend out of the client bundle and avoids
+  // build errors if the package is not yet installed in dev.
+  const { Resend } = await import("resend");
+  const resend = new Resend(apiKey);
+
+  const fromAddress = process.env.RESEND_FROM_EMAIL ?? "leads@launchhpad.com";
+  const toAddresses = (process.env.RESEND_TO_EMAIL ?? "hello@launchhpad.com")
+    .split(",")
+    .map((s) => s.trim());
+
+  await resend.emails.send({
+    from: fromAddress,
+    to: toAddresses,
+    replyTo: lead.email,
+    subject: `New lead: ${lead.company} (${lead.budget})`,
+    text: [
+      `Name: ${lead.name}`,
+      `Email: ${lead.email}`,
+      `Company: ${lead.company}`,
+      `Budget: ${lead.budget}`,
+      `Received: ${lead.receivedAt}`,
+      "",
+      "--- Message ---",
+      "",
+      lead.message,
+    ].join("\n"),
+  });
+}
 
 export async function submitContactForm(
   _prev: ContactFormState,
@@ -74,23 +116,14 @@ export async function submitContactForm(
     receivedAt: new Date().toISOString(),
   };
 
-  // TODO: wire Resend
-  // import { Resend } from "resend";
-  // const resend = new Resend(process.env.RESEND_API_KEY);
-  // await resend.emails.send({
-  //   from: "leads@launchhpad.com",
-  //   to: ["hello@launchhpad.com"],
-  //   replyTo: lead.email,
-  //   subject: `New lead: ${lead.company} (${lead.budget})`,
-  //   text: [
-  //     `Name: ${lead.name}`,
-  //     `Email: ${lead.email}`,
-  //     `Company: ${lead.company}`,
-  //     `Budget: ${lead.budget}`,
-  //     "",
-  //     lead.message,
-  //   ].join("\n"),
-  // });
+  try {
+    await sendLeadEmail(lead);
+  } catch (err) {
+    // Log but do not block form success — we still captured the data.
+    console.error("[contact] Failed to send email via Resend:", err);
+  }
+
+  // Always log locally as backup.
   console.log("[contact] new lead", lead);
 
   return {
