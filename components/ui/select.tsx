@@ -8,8 +8,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectHTMLAttributes<HTMLSel
         <select
           ref={ref}
           className={cn(
-            "flex h-11 w-full appearance-none rounded-md border border-border bg-surface-1 px-3 pr-10 text-sm text-fg",
-            "transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+            "flex h-11 w-full appearance-none rounded-xl border border-border/60 bg-surface-1/50 px-4 pr-10 text-sm text-fg backdrop-blur-sm",
+            "transition-all duration-200",
+            "hover:border-border",
+            "focus-visible:border-primary/60 focus-visible:bg-surface-1/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-0",
             "disabled:cursor-not-allowed disabled:opacity-50",
             className,
           )}

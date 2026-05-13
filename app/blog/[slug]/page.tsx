@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { ReadingProgress } from "@/components/reading-progress";
 import { MDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/format";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/content";
@@ -54,6 +55,8 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
   return (
     <>
+      <ReadingProgress />
+
       <section className="border-b border-border pt-12 pb-12 sm:pt-16">
         <Container>
           <Link
@@ -79,6 +82,10 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               {frontmatter.description}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">
+              {/* Author avatar */}
+              <span className="inline-flex size-7 items-center justify-center rounded-full bg-primary/10 text-[10px] font-semibold text-primary">
+                {frontmatter.author.split(" ").map((n) => n[0]).join("")}
+              </span>
               <span>{frontmatter.author}</span>
               <span aria-hidden="true">{String.fromCharCode(0x00b7)}</span>
               <span>{formatDate(frontmatter.publishedAt)}</span>
@@ -90,10 +97,10 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       </section>
 
       <Section className="!py-16 sm:!py-20">
-        <article className="mx-auto max-w-3xl">
+        <article className="prose-custom mx-auto max-w-3xl">
           <MDX source={content} />
 
-          <div className="mt-16 rounded-3xl border border-primary/30 bg-gradient-to-br from-[color:var(--color-primary-deep)]/30 via-surface-1 to-surface-1 p-8 sm:p-10">
+          <div className="mt-16 rounded-3xl border border-primary/20 bg-gradient-to-br from-[color:var(--color-primary-deep)]/30 via-surface-1 to-surface-1 p-8 shadow-[0_0_40px_-12px_rgba(124,58,237,0.15)] sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
               What now?
             </p>
@@ -102,11 +109,14 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             </h2>
             <Link
               href="/contact"
-              className={cn(buttonVariants({ variant: "default", size: "lg" }), "mt-6 group")}
+              className={cn(
+                buttonVariants({ variant: "default", size: "lg" }),
+                "mt-6 group shadow-[0_0_16px_rgba(124,58,237,0.3)] hover:shadow-[0_0_24px_rgba(124,58,237,0.5)] transition-shadow",
+              )}
             >
               Start a project
               <ArrowRight
-                className="size-4 transition-transform group-hover:translate-x-0.5"
+                className="size-4 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"
               />
             </Link>
