@@ -1,0 +1,62 @@
+---
+title: "Helio AI: from Figma file to paying customers in 30 days"
+client: "Helio AI"
+industry: "AI / SaaS"
+services:
+  - "Product Design"
+  - "Web Engineering"
+  - "AI Integration"
+  - "Launch Sprints"
+year: 2024
+summary: "We took Helio AI from a 14-screen Figma file to a public launch with paying customers in 30 days. The launch deck was the product, the seed round closed two weeks later, and the team kept shipping every sprint after."
+hero:
+  metric: "30 days"
+  label: "Figma file to public launch"
+metrics:
+  - value: "412"
+    label: "Beta signups in launch week"
+  - value: "$148k"
+    label: "ARR booked within 60 days"
+  - value: "1.4s"
+    label: "p75 LCP at launch"
+  - value: "92%"
+    label: "Day-7 activation rate"
+tags:
+  - "AI"
+  - "SaaS"
+  - "Launch Sprint"
+  - "Next.js"
+  - "RAG"
+slug: "helio-ai-launch"
+publishedAt: "2024-11-04"
+---
+
+## The Challenge
+
+Helio AI had a working prototype, two technical co-founders, no marketing site, no billing, no auth, and a planned demo at an industry conference 30 days out. The product — an AI workspace that turns sales call transcripts into pipeline-ready follow-ups — was good. The packaging around it did not exist.
+
+The founders were realistic about what they did and did not need. They did not need a marketing agency. They did not need a design system they would never extend. They needed a real product live by the conference, with auth, billing, a working demo path for press, and a marketing site that did not look like it was thrown together over a weekend. They had budget for one team, not three.
+
+## Our Approach
+
+We ran a 30-day Launch Sprint. One team — a senior product designer, two senior engineers, a brand designer, and a strategist — embedded full-time with the Helio founders. We locked scope on day three around a single success metric: paying customers using the product in week one after launch.
+
+Days 0 through 3 were brutal scoping. We cut the original 14-screen Figma flow to seven, deferred two of the three integrations, and named the smallest possible "aha" moment we could ship: paste a transcript, get back a ranked list of follow-up actions you can copy into your CRM in under 90 seconds.
+
+Days 4 through 21 were design and build in parallel. Daily Loom updates from the team. Weekly live demos with the founders. The retrieval layer landed first — RAG over the user's own historical transcripts with citations and per-tenant isolation — followed by auth, billing, and the marketing site. We wrote evals on day six and ran them on every PR after that, so model regressions never reached production.
+
+Days 22 through 27 were a closed beta with 24 hand-picked sales leaders. We watched 41 sessions on Hotjar, fixed every dead-end we found, and rewrote three onboarding screens after watching three users get stuck on the same step.
+
+## What We Shipped
+
+- A production AI workspace built on Next.js 15, Postgres, Drizzle, and a typed agent framework with retries, fallbacks, and per-customer cost ceilings.
+- A RAG pipeline with citations, evals, and prompt versioning — the eval suite catches regressions before merge.
+- Auth, billing, usage metering, and a self-serve plan upgrade flow.
+- A marketing site, public changelog, and docs site, all on the same content pipeline so updates ship in one PR.
+- A launch playbook covering Product Hunt, the conference demo, lifecycle email, and a 14-day press window.
+
+## The Outcome
+
+Helio AI launched on day 30 at the conference and on Product Hunt the same morning. 412 signups landed in the first week, 38 of them converted to paid within 14 days, and the company booked $148,000 in annual recurring revenue inside 60 days of launch. p75 Largest Contentful Paint held at 1.4 seconds and day-7 activation settled at 92 percent.
+
+The seed round closed two weeks after launch. The founders told the lead investor the deck was the product — and meant it. We rolled into a three-month retainer to ship the next two integrations and a self-serve onboarding flow that the team is still extending today.
