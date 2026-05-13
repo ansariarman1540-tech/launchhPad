@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { site } from "@/content/site";
@@ -10,20 +10,33 @@ import { buttonVariants } from "@/components/ui/button";
 
 /**
  * Sticky, frosted-blur top navigation.
- * Mobile menu uses a state-driven full-screen sheet (no Radix).
+ * Mobile menu uses a state-driven full-screen sheet (no Radix), with
+ * Esc-to-close and focus restoration to the trigger button.
  */
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (open) {
-      const previous = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = previous;
-      };
-    }
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+      // Return focus to the trigger when the sheet closes.
+      triggerRef.current?.focus();
+    };
   }, [open]);
 
   // Close the sheet whenever the route changes.
@@ -74,10 +87,11 @@ export function SiteHeader() {
         </div>
 
         <button
+          ref={triggerRef}
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          aria-controls="mobile-menu"
+          aria-haspopup="dialog"
           className="md:hidden inline-flex size-10 items-center justify-center rounded-md border border-border bg-surface-1 text-fg"
           onClick={() => setOpen((v) => !v)}
         >
@@ -87,7 +101,6 @@ export function SiteHeader() {
 
       {open ? (
         <div
-          id="mobile-menu"
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"

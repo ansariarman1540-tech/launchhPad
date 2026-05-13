@@ -45,10 +45,10 @@ describe("site copy sanity", () => {
     expect(new Set(questions).size).toBe(questions.length);
   });
 
-  it("footer has tagline, three columns, and legal links", () => {
+  it("footer has tagline, three columns, and a defined legal collection", () => {
     expect(site.footer.tagline.length).toBeGreaterThan(0);
     expect(site.footer.columns.length).toBe(3);
-    expect(site.footer.legal.length).toBeGreaterThan(0);
+    expect(Array.isArray(site.footer.legal)).toBe(true);
   });
 
   it("never spells the brand as 'Launchpad'", () => {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { ArrowRight, ChevronLeft } from "lucide-react";
 import { Container } from "@/components/container";
@@ -10,7 +9,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { MDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/format";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/content";
-import { articleLD } from "@/lib/jsonld";
+import { articleLD, breadcrumbLD } from "@/lib/jsonld";
 import { cn } from "@/lib/utils";
 
 type Params = { slug: string };
@@ -115,11 +114,21 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         </article>
       </Section>
 
-      <Script
-        id={`article-jsonld-${frontmatter.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: articleLD(frontmatter) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: breadcrumbLD([
+            { label: "Home", href: "/" },
+            { label: "Writing", href: "/blog" },
+            { label: frontmatter.title, href: `/blog/${frontmatter.slug}` },
+          ]),
+        }}
       />
     </>
   );

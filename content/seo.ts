@@ -102,7 +102,7 @@ export const seo = {
       "Senior design, engineering, and growth talent for ambitious founders and scaling brands. Where ideas launch. And keep launching.",
     images: [
       {
-        url: "https://www.launchhpad.com/og/default.png",
+        url: "https://www.launchhpad.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "LaunchhPad — Where ideas launch. And keep launching.",
@@ -118,7 +118,7 @@ export const seo = {
     title: "LaunchhPad — Design, dev, and growth in one platform",
     description:
       "Senior design, engineering, and growth talent for ambitious founders and scaling brands.",
-    image: "https://www.launchhpad.com/og/default.png",
+    image: "https://www.launchhpad.com/opengraph-image",
   },
 
   jsonLd: {
@@ -128,7 +128,7 @@ export const seo = {
       name: "LaunchhPad",
       legalName: "LaunchhPad Studio, Inc.",
       url: "https://www.launchhpad.com",
-      logo: "https://www.launchhpad.com/brand/launchhpad-mark.png",
+      logo: "https://www.launchhpad.com/opengraph-image",
       description:
         "LaunchhPad is a senior product studio for ambitious founders and scaling brands. Design, engineering, and growth in one team.",
       foundingDate: "2021-04-01",

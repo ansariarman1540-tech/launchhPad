@@ -9,6 +9,7 @@ import { CTASection } from "@/components/sections/cta-section";
 import { MDX } from "@/lib/mdx";
 import { formatDate } from "@/lib/format";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/content";
+import { breadcrumbLD } from "@/lib/jsonld";
 
 type Params = { slug: string };
 
@@ -152,6 +153,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
       </Section>
 
       <CTASection />
+
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: breadcrumbLD([
+            { label: "Home", href: "/" },
+            { label: "Work", href: "/work" },
+            { label: frontmatter.title, href: `/work/${frontmatter.slug}` },
+          ]),
+        }}
+      />
     </>
   );
 }

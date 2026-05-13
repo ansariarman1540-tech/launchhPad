@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import React, { useActionState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/button";
@@ -40,6 +40,22 @@ export function ContactForm() {
       noValidate
       className="flex flex-col gap-5 rounded-3xl border border-border bg-surface-1 p-6 sm:p-8"
     >
+      {/* Honeypot — visually hidden, ignored by humans, filled by bots. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+      >
+        <label htmlFor="company_url">Company website</label>
+        <input
+          id="company_url"
+          name="company_url"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
           id="name"
@@ -130,12 +146,28 @@ function Field({
   error?: string;
   children: React.ReactNode;
 }) {
+  const describedBy = error ? `${id}-error` : undefined;
+  // Clone the single child to attach aria-invalid and aria-describedby. This
+  // keeps the API ergonomic (just nest the input) without requiring callers
+  // to thread these props themselves.
+  const child = children as React.ReactElement<{
+    "aria-invalid"?: boolean;
+    "aria-describedby"?: string;
+  }>;
+  const enhanced =
+    React.isValidElement(child)
+      ? React.cloneElement(child, {
+          "aria-invalid": error ? true : undefined,
+          "aria-describedby": describedBy,
+        })
+      : child;
+
   return (
     <div className="flex flex-col gap-2">
       <Label htmlFor={id}>{label}</Label>
-      {children}
+      {enhanced}
       {error ? (
-        <p id={`${id}-error`} className="text-xs text-red-300">
+        <p id={describedBy} role="alert" className="text-xs text-red-300">
           {error}
         </p>
       ) : null}

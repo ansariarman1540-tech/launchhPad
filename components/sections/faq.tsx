@@ -1,4 +1,4 @@
-import Script from "next/script";
+import type { ReactNode } from "react";
 import { site } from "@/content/site";
 import { Section } from "@/components/section";
 import { Accordion } from "@/components/ui/accordion";
@@ -9,6 +9,12 @@ type Props = {
 };
 
 export function FAQ({ withSectionHeader = true }: Props) {
+  // FAQs are static, server-rendered text — coerce to ReactNode for the accordion's typed prop.
+  const items: ReadonlyArray<{ question: string; answer: ReactNode }> = site.faqs.map((f) => ({
+    question: f.question,
+    answer: f.answer,
+  }));
+
   return (
     <Section id="faq">
       {withSectionHeader ? (
@@ -23,13 +29,12 @@ export function FAQ({ withSectionHeader = true }: Props) {
       ) : null}
 
       <div className="mx-auto mt-14 max-w-3xl">
-        <Accordion items={site.faqs} />
+        <Accordion items={items} />
       </div>
 
-      <Script
-        id="faq-jsonld"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: faqLD(site.faqs) }}
       />
     </Section>

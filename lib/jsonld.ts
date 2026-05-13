@@ -28,7 +28,7 @@ export function articleLD(post: BlogFrontmatter): string {
       name: "LaunchhPad",
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl()}/brand/launchhpad-mark.png`,
+        url: `${siteUrl()}/opengraph-image`,
       },
     },
     datePublished: post.publishedAt,

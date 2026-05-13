@@ -330,12 +330,12 @@ export const site = {
       {
         title: "Services",
         links: [
-          { label: "Web Engineering", href: "/services/web-engineering" },
-          { label: "Product Design", href: "/services/product-design" },
-          { label: "Brand Identity", href: "/services/brand-identity" },
-          { label: "Growth Marketing", href: "/services/growth-marketing" },
-          { label: "AI Integration", href: "/services/ai-integration" },
-          { label: "Launch Sprints", href: "/services/launch-sprints" },
+          { label: "Web Engineering", href: "/services#web-engineering" },
+          { label: "Product Design", href: "/services#product-design" },
+          { label: "Brand Identity", href: "/services#brand-identity" },
+          { label: "Growth Marketing", href: "/services#growth-marketing" },
+          { label: "AI Integration", href: "/services#ai-integration" },
+          { label: "Launch Sprints", href: "/services#launch-sprints" },
         ],
       },
       {
@@ -345,7 +345,6 @@ export const site = {
           { label: "Process", href: "/process" },
           { label: "About", href: "/about" },
           { label: "Writing", href: "/blog" },
-          { label: "Careers", href: "/careers" },
           { label: "Contact", href: "/contact" },
         ],
       },
@@ -354,8 +353,7 @@ export const site = {
         links: [
           { label: "The 30-Day Playbook", href: "/blog/the-30-day-launch-playbook" },
           { label: "Case studies", href: "/work" },
-          { label: "Brand guide", href: "/brand" },
-          { label: "RSS", href: "/rss.xml" },
+          { label: "FAQ", href: "/process#faq" },
         ],
       },
     ],
@@ -365,11 +363,7 @@ export const site = {
       { label: "GitHub", href: "https://github.com/launchhpad" },
       { label: "Dribbble", href: "https://dribbble.com/launchhpad" },
     ],
-    legal: [
-      { label: "Privacy", href: "/legal/privacy" },
-      { label: "Terms", href: "/legal/terms" },
-      { label: "Cookies", href: "/legal/cookies" },
-    ],
+    legal: [],
     copyright: "(c) LaunchhPad Studio, Inc. All rights reserved.",
   },
 

@@ -6,6 +6,7 @@ import { siteUrl } from "@/lib/site-url";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SkipLink } from "@/components/skip-link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="bg-[color:var(--color-bg)] text-[color:var(--color-fg)] antialiased">
         <ThemeProvider>
+          <SkipLink />
           <div className="flex min-h-screen flex-col">
             <SiteHeader />
             <main id="main" className="flex-1">

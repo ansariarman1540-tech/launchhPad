@@ -4,20 +4,27 @@ import { cn } from "@/lib/utils";
 
 /**
  * Convert a heading's text content to a slug suitable for an `id`/anchor link.
+ * Walks the React tree recursively so headings containing inline elements
+ * (`<code>`, `<a>`, etc.) still produce a meaningful id.
  */
 function slugify(input: ReactNode): string {
-  const text =
-    typeof input === "string"
-      ? input
-      : Array.isArray(input)
-        ? input.filter((c) => typeof c === "string").join(" ")
-        : "";
+  const text = extractText(input);
   return text
     .toLowerCase()
     .trim()
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-");
+}
+
+function extractText(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join(" ");
+  if (typeof node === "object" && "props" in node) {
+    return extractText((node as { props: { children?: ReactNode } }).props.children);
+  }
+  return "";
 }
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;

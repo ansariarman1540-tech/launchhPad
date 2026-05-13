@@ -31,7 +31,7 @@ export function MarqueeLogos() {
         className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]"
       >
         <div
-          className="flex w-max items-center gap-16 px-8 [animation:marquee_36s_linear_infinite] group-hover:[animation-play-state:paused]"
+          className="marquee-track flex w-max items-center gap-16 px-8 [animation:marquee_36s_linear_infinite] group-hover:[animation-play-state:paused]"
         >
           {[...LOGOS, ...LOGOS].map((name, i) => (
             <span

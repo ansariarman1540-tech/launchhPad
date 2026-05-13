@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { Hero } from "@/components/sections/hero";
 import { MarqueeLogos } from "@/components/sections/marquee-logos";
 import { ServicesGrid } from "@/components/sections/services-grid";
@@ -22,10 +21,9 @@ export default async function HomePage() {
       <TestimonialsGrid />
       <CTASection />
 
-      <Script
-        id="organization-jsonld"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: organizationLD() }}
       />
     </>

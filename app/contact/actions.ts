@@ -22,9 +22,7 @@ const ContactSchema = z.object({
     .string()
     .min(20, "Tell us a bit more (20+ characters).")
     .max(4000, "That is plenty. Trim to under 4000 characters."),
-});
-
-export type ContactFormState = {
+});export type ContactFormState = {
   ok: boolean;
   message: string;
   fieldErrors?: Partial<Record<keyof z.infer<typeof ContactSchema>, string>>;
@@ -42,6 +40,14 @@ export async function submitContactForm(
   _prev: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> {
+  // Spam guard: bots fill every field, including hidden honeypots.
+  // Real users never type into a `display:none` input.
+  const honeypot = formData.get("company_url");
+  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
+    // Pretend success so we do not signal what gave them away.
+    return { ok: true, message: site.contact.form.successHeadline };
+  }
+
   const parsed = ContactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
