@@ -71,23 +71,23 @@ export type SEO = {
 };
 
 export const seo = {
-  defaultTitle: "LaunchhPad — Design, dev, and growth in one platform",
+  defaultTitle: "LaunchhPad — Elevate Your Digital Presence",
   titleTemplate: "%s — LaunchhPad",
   description:
-    "LaunchhPad is the senior team behind ambitious founders and scaling brands. Product design, web engineering, brand, growth, and AI — shipped in weeks, not quarters.",
+    "LaunchhPad specializes in web development and innovative marketing strategies that elevate your brand, ensuring it stands out in a competitive landscape.",
   keywords: [
     "LaunchhPad",
-    "startup design agency",
-    "Next.js development",
-    "product design studio",
-    "brand identity for startups",
-    "growth marketing agency",
-    "AI integration",
-    "launch sprint",
-    "founder studio",
-    "Series A web design",
-    "premium product design",
-    "TypeScript engineering",
+    "web development agency",
+    "digital marketing",
+    "SEO services",
+    "brand identity design",
+    "social media management",
+    "UI UX design",
+    "website design",
+    "e-commerce development",
+    "PPC advertising",
+    "content marketing",
+    "responsive web design",
   ],
   siteUrl: "https://www.launchhpad.com",
   twitterHandle: "@launchhpad",
@@ -97,9 +97,9 @@ export const seo = {
     siteName: "LaunchhPad",
     locale: "en_US",
     url: "https://www.launchhpad.com",
-    title: "LaunchhPad — Design, dev, and growth in one platform",
+    title: "LaunchhPad — Elevate Your Digital Presence",
     description:
-      "Senior design, engineering, and growth talent for ambitious founders and scaling brands. Where ideas launch. And keep launching.",
+      "Web development and digital marketing that elevates your brand. Custom websites, SEO, paid ads, and branding — all under one roof.",
     images: [
       {
         url: "https://www.launchhpad.com/opengraph-image",
@@ -115,9 +115,9 @@ export const seo = {
     card: "summary_large_image",
     site: "@launchhpad",
     creator: "@launchhpad",
-    title: "LaunchhPad — Design, dev, and growth in one platform",
+    title: "LaunchhPad — Elevate Your Digital Presence",
     description:
-      "Senior design, engineering, and growth talent for ambitious founders and scaling brands.",
+      "Web development and digital marketing that elevates your brand.",
     image: "https://www.launchhpad.com/opengraph-image",
   },
 
@@ -130,7 +130,7 @@ export const seo = {
       url: "https://www.launchhpad.com",
       logo: "https://www.launchhpad.com/opengraph-image",
       description:
-        "LaunchhPad is a senior product studio for ambitious founders and scaling brands. Design, engineering, and growth in one team.",
+        "LaunchhPad is a web development and digital marketing agency that helps businesses elevate their online presence and grow.",
       foundingDate: "2021-04-01",
       sameAs: [
         "https://twitter.com/launchhpad",

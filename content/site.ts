@@ -112,100 +112,100 @@ export const site = {
     { label: "Services", href: "/services" },
     { label: "Work", href: "/work" },
     { label: "Process", href: "/process" },
-    { label: "Writing", href: "/blog" },
+    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
 
   hero: {
-    eyebrow: "Design, dev, and growth in one platform",
-    headline: "Where ideas launch. And keep launching.",
+    eyebrow: "Web Development & Digital Marketing",
+    headline: "Elevate Your Digital Presence.",
     subhead:
-      "LaunchhPad is the senior team behind ambitious founders and scaling brands. We design the product, ship the code, and drive the growth — in weeks, not quarters.",
-    primaryCta: { label: "Start a project", href: "/contact" },
-    secondaryCta: { label: "See the work", href: "/work" },
+      "At LaunchhPad, we specialize in web development and innovative marketing strategies that elevate your brand, ensuring it stands out in a competitive landscape.",
+    primaryCta: { label: "Get Started", href: "/contact" },
+    secondaryCta: { label: "Our Services", href: "/services" },
   },
 
   socialProof:
-    "Trusted by founders shipping at Nova, Helio, Meridian, Orbital, Caldera, and Kinfolk.",
+    "Trusted by businesses across industries to build their digital presence and drive growth.",
 
   services: [
     {
-      slug: "web-engineering",
-      title: "Web Engineering",
-      oneLiner: "Typed, fast, accessible product surfaces.",
+      slug: "web-development",
+      title: "Web Development",
+      oneLiner: "Custom websites that convert visitors into customers.",
       description:
-        "We build production web apps and marketing sites that pass audit on day one. Next.js, TypeScript, Postgres, and a deployment pipeline you can hand to your engineering team without apologizing.",
+        "We build fast, responsive, and SEO-optimized websites tailored to your business goals. From landing pages to full-scale web applications, every project is built with performance and user experience at the core.",
       bullets: [
-        "Next.js 15 with the App Router, React Server Components, and typed routes",
-        "Sub-1.5s LCP on real customer hardware, 95+ Lighthouse on every page",
-        "WCAG AA accessibility verified with automated and manual audits",
-        "CI, preview deploys, error tracking, and uptime monitoring on day one",
+        "Custom responsive websites built for speed and performance",
+        "E-commerce solutions with secure payment integrations",
+        "Progressive Web Apps (PWA) for mobile-first experiences",
+        "CMS integration — WordPress, Shopify, or headless setups",
       ],
     },
     {
-      slug: "product-design",
-      title: "Product Design",
-      oneLiner: "Senior product designers, not template editors.",
+      slug: "digital-marketing",
+      title: "Digital Marketing",
+      oneLiner: "Strategies that drive traffic, leads, and revenue.",
       description:
-        "We design interfaces founders are proud to demo. We work in Figma, ship a real component library, and stay close to the engineers who build it. No five-week handoff.",
+        "We craft data-driven marketing campaigns that reach your target audience where they spend their time. From SEO to paid ads, we focus on measurable results and real ROI.",
       bullets: [
-        "Discovery interviews with your real customers, not personas",
-        "Component-first Figma libraries that map to your codebase",
-        "Interaction prototypes for every flow that touches money or data",
-        "Weekly design reviews with you, your engineers, and your investors",
+        "Search Engine Optimization (SEO) — on-page, technical, and off-page",
+        "Pay-Per-Click (PPC) advertising — Google Ads, Meta Ads",
+        "Content marketing and blog strategy",
+        "Email marketing campaigns and automation",
       ],
     },
     {
       slug: "brand-identity",
       title: "Brand Identity",
-      oneLiner: "A brand that holds up under scrutiny.",
+      oneLiner: "Memorable brands that connect with your audience.",
       description:
-        "Founders rebrand for one reason: the old identity stopped doing its job. We rebuild brands that survive a Series A diligence call, a TechCrunch screenshot, and a billboard at the airport.",
+        "Your brand is more than a logo. We create cohesive brand identities that communicate your values, resonate with your audience, and set you apart from competitors.",
       bullets: [
-        "Naming, wordmark, and logotype in editable vector with full type system",
-        "Voice, tone, and a banned-words list so every writer stays on message",
-        "Color, motion, and illustration tokens in code-ready format",
-        "Brand guidelines as a Notion site, not a 90-page PDF nobody opens",
+        "Logo design and visual identity systems",
+        "Brand guidelines and style documentation",
+        "Business card, letterhead, and collateral design",
+        "Social media branding and templates",
       ],
     },
     {
-      slug: "growth-marketing",
-      title: "Growth Marketing",
-      oneLiner: "Compounding channels, not one-shot campaigns.",
+      slug: "social-media-management",
+      title: "Social Media Management",
+      oneLiner: "Grow your audience and engagement organically.",
       description:
-        "We pick the two channels that fit your business and make them work. SEO, paid, lifecycle, and content — measured against pipeline, not impressions.",
+        "We manage your social media presence with strategic content, consistent posting, and community engagement that builds trust and drives followers to customers.",
       bullets: [
-        "Channel selection based on your CAC payback, not the latest hot take",
-        "Programmatic SEO and content engines that publish weekly without burning out",
-        "Paid acquisition with named experiments, hypotheses, and a kill switch",
-        "Lifecycle email and onboarding flows that lift activation 20-40 percent",
+        "Content calendar planning and execution",
+        "Graphic design for posts, stories, and reels",
+        "Community management and engagement",
+        "Analytics, reporting, and growth optimization",
       ],
     },
     {
-      slug: "ai-integration",
-      title: "AI Integration",
-      oneLiner: "AI that earns its keep.",
+      slug: "ui-ux-design",
+      title: "UI/UX Design",
+      oneLiner: "Intuitive designs that users love to interact with.",
       description:
-        "We ship AI features customers actually use. RAG, agents, evals, and the unglamorous infrastructure — observability, cost controls, fallbacks — that keeps them up at 3 a.m.",
+        "We design interfaces that are beautiful, functional, and focused on the user. Every screen is tested, refined, and built to convert — not just to look good in a portfolio.",
       bullets: [
-        "RAG over your real data with citations, evals, and per-tenant isolation",
-        "Agent workflows with tool-use, retries, and human-in-the-loop checkpoints",
-        "LLM cost monitoring, prompt versioning, and offline eval suites",
-        "Clear answers on what to build with AI, and what not to",
+        "User research and wireframing",
+        "High-fidelity prototypes in Figma",
+        "Mobile-first responsive design",
+        "Usability testing and iteration",
       ],
     },
     {
-      slug: "launch-sprints",
-      title: "Launch Sprints",
-      oneLiner: "Thirty days. Live product. Real customers.",
+      slug: "seo-optimization",
+      title: "SEO Optimization",
+      oneLiner: "Rank higher. Get found. Grow organically.",
       description:
-        "A fixed-scope, fixed-price sprint to get a real product in front of real users in thirty days. Strategy, design, build, launch — one team, one timeline.",
+        "We implement proven SEO strategies that improve your search rankings, drive organic traffic, and reduce your dependence on paid ads over time.",
       bullets: [
-        "Day 0-3: scope, success metrics, and a one-page launch plan you sign off on",
-        "Day 4-21: design and build, daily Loom updates, weekly live demos",
-        "Day 22-27: closed beta with twenty hand-picked users and a feedback loop",
-        "Day 28-30: public launch, analytics review, and a thirty-day roadmap",
+        "Technical SEO audits and fixes",
+        "Keyword research and content optimization",
+        "Local SEO for brick-and-mortar businesses",
+        "Link building and domain authority growth",
       ],
     },
   ],
@@ -213,129 +213,129 @@ export const site = {
   process: [
     {
       number: "01",
-      title: "Discover",
-      summary: "We learn your business before we open Figma.",
+      title: "Discovery",
+      summary: "We learn your business, goals, and audience.",
       detail:
-        "Founder interviews, customer calls, competitive teardown, and a hard look at your analytics. We finish discovery with a one-page brief: who we are building for, what they need, and how we will know we won.",
+        "We start with a deep-dive into your business — your goals, your audience, your competitors, and what success looks like. This shapes every decision that follows.",
     },
     {
       number: "02",
-      title: "Define",
-      summary: "Scope locked. Success metrics named.",
+      title: "Strategy",
+      summary: "A clear plan with timelines and deliverables.",
       detail:
-        "We write down the smallest version of the product that solves the real problem, the success metric that proves it, and the timeline. Anything outside that scope goes on a v2 list, not into this sprint.",
+        "Based on discovery, we build a strategy document with clear milestones, deliverables, and timelines. You know exactly what you are getting and when.",
     },
     {
       number: "03",
       title: "Design",
-      summary: "Real interfaces, real data, real fast.",
+      summary: "Visuals that match your brand and goals.",
       detail:
-        "We design in Figma against production data. Every screen is reviewed by a senior designer and a senior engineer in the same session. No throwaway artifacts, no unbuildable mockups.",
+        "We design mockups and prototypes you can interact with. You give feedback, we iterate, and we do not move to development until you love what you see.",
     },
     {
       number: "04",
-      title: "Develop",
-      summary: "Typed, tested, deployed daily.",
+      title: "Development",
+      summary: "Clean code, fast performance, pixel-perfect.",
       detail:
-        "We ship to a preview environment from day one. Pull requests are small, reviewed, and merged behind feature flags. You see progress every day, not at the end of the month.",
+        "We build with modern technologies — fast load times, mobile-responsive, SEO-friendly from day one. You get regular updates and a staging site to review progress.",
     },
     {
       number: "05",
-      title: "Deploy & iterate",
-      summary: "Launch is the start, not the finish.",
+      title: "Launch & Growth",
+      summary: "Go live, then optimize and grow.",
       detail:
-        "We launch with monitoring, error tracking, and an analytics dashboard wired to your success metric. The first thirty days post-launch are tuning, not handoff.",
+        "Launch is the beginning, not the end. We monitor performance, fix issues fast, and work with you on ongoing growth — SEO, content, and campaigns that compound.",
     },
   ],
 
   testimonials: [
     {
       quote:
-        "We rebuilt our entire web stack in five weeks with LaunchhPad. LCP dropped from 4.1s to 1.2s and our paid funnel got 28 percent cheaper the same month. They moved like an in-house team that already knew our product.",
-      name: "Priya Mehta",
-      role: "Co-founder & CEO",
-      company: "Nova Financial",
-    },
-    {
-      quote:
-        "Most agencies hand you a deck. LaunchhPad handed us a deployed product on day thirty with real users on it. Our seed round closed two weeks after launch and the deck literally was the product.",
-      name: "Marcus Chen",
+        "LaunchhPad completely transformed our online presence. Our new website loads fast, looks professional, and we have seen a 3x increase in inquiries since launch.",
+      name: "Rahul Sharma",
       role: "Founder",
-      company: "Helio AI",
+      company: "TechVista Solutions",
     },
     {
       quote:
-        "Senior people, no juniors hidden in the org chart, no surprise invoices. They rebuilt our storefront, fixed our SEO, and shipped a loyalty program that drove 31 percent of our Q4 revenue. We extended the engagement twice.",
-      name: "Sasha Okafor",
-      role: "VP Brand & Digital",
-      company: "Meridian Goods",
+        "Their digital marketing strategy doubled our organic traffic in four months. They are responsive, data-driven, and genuinely invested in our growth.",
+      name: "Priya Nair",
+      role: "Marketing Director",
+      company: "GreenLeaf Organics",
+    },
+    {
+      quote:
+        "From branding to website to SEO — LaunchhPad handled everything. We went from zero online presence to ranking on the first page of Google in three months.",
+      name: "Arjun Patel",
+      role: "Co-founder",
+      company: "UrbanCraft Interiors",
     },
   ],
 
   faqs: [
     {
-      question: "How fast can you start?",
+      question: "How long does a website project take?",
       answer:
-        "Most engagements kick off within seven days of a signed agreement. Launch Sprints typically start the Monday after a Friday signature. We will tell you on the first call if our calendar makes that impossible.",
+        "Most websites take 2 to 4 weeks depending on complexity. A simple landing page can be live in under a week. A full e-commerce site with custom features takes closer to 4-6 weeks.",
     },
     {
-      question: "Who actually does the work?",
+      question: "Do you work with small businesses?",
       answer:
-        "Senior designers, senior engineers, and a senior strategist. Average tenure on the team is nine years. We do not staff junior talent on client work and we do not subcontract overseas without telling you.",
+        "Absolutely. Most of our clients are small to mid-sized businesses. We offer flexible packages that fit different budgets without compromising on quality.",
     },
     {
-      question: "How do you price projects?",
+      question: "What technologies do you use?",
       answer:
-        "Launch Sprints are fixed-price, fixed-scope. Longer engagements are priced as monthly retainers with a defined scope per month. We do not bill hourly. You always know the number before we start.",
-    },
-    {
-      question: "Do you work with non-technical founders?",
-      answer:
-        "Yes. About a third of our clients are non-technical founders. We translate the technical decisions into trade-offs you can actually weigh, and we never use a product decision as a way to sell more hours.",
-    },
-    {
-      question: "What stack do you build on?",
-      answer:
-        "Default stack: Next.js 15, TypeScript, Postgres, Drizzle or Prisma, Tailwind, Vercel, Sentry, PostHog. We will use a different stack when there is a real reason. We will not use a different stack because it is fashionable.",
+        "We build with Next.js, React, Tailwind CSS, WordPress, Shopify, and more depending on your needs. We pick the right tool for the job, not the trendiest one.",
     },
     {
       question: "Do you offer ongoing support after launch?",
       answer:
-        "Yes. Most clients move to a monthly retainer for iteration, growth, and on-call coverage. You can also walk away with a clean codebase, full documentation, and an offboarding session for your in-house team.",
+        "Yes. We offer monthly maintenance plans that include updates, security patches, performance monitoring, and content changes. You can also hire us for one-off updates anytime.",
     },
     {
-      question: "Can you sign an NDA before the first call?",
+      question: "How much does a website cost?",
       answer:
-        "Yes. Send your standard mutual NDA to nda@launchhpad.com and we will sign and return it within one business day.",
+        "Our projects typically start around $1,500 for a basic site and go up from there depending on features, pages, and integrations. We provide a detailed quote after our discovery call.",
     },
     {
-      question: "What kind of companies do you turn down?",
+      question: "Can you help with SEO and marketing too?",
       answer:
-        "We do not work on gambling, surveillance, or anything that targets minors with engagement loops. We will also pass if we do not think we are the right fit — we would rather refer you out than take a project we cannot win.",
+        "Yes. We offer SEO, paid ads, social media management, and content marketing as standalone services or bundled with a website project. Many clients start with a site and add marketing later.",
+    },
+    {
+      question: "Do you provide designs before development?",
+      answer:
+        "Yes. We always design first and get your approval before writing any code. You will see Figma mockups of every page and can request revisions until you are satisfied.",
+    },
+    {
+      question: "What if I already have a website that needs fixing?",
+      answer:
+        "We do redesigns, performance fixes, SEO audits, and partial rebuilds. Send us the URL and we will tell you exactly what we would change and what it would cost.",
     },
   ],
 
   cta: {
-    eyebrow: "Ready when you are",
-    headline: "Tell us what you're building.",
+    eyebrow: "Ready to grow?",
+    headline: "Let's build something great together.",
     subhead:
-      "We reply in one business day. If we are not the right fit, we will say so on the first call and point you somewhere better.",
-    primaryCta: { label: "Start a project", href: "/contact" },
-    secondaryCta: { label: "Read the playbook", href: "/blog/the-30-day-launch-playbook" },
+      "Tell us about your project. We will get back to you within 24 hours with a clear plan and honest pricing.",
+    primaryCta: { label: "Get Started", href: "/contact" },
+    secondaryCta: { label: "View Our Work", href: "/work" },
   },
 
   footer: {
-    tagline: "Where ideas launch. And keep launching.",
+    tagline: "Elevate Your Digital Presence.",
     columns: [
       {
         title: "Services",
         links: [
-          { label: "Web Engineering", href: "/services#web-engineering" },
-          { label: "Product Design", href: "/services#product-design" },
+          { label: "Web Development", href: "/services#web-development" },
+          { label: "Digital Marketing", href: "/services#digital-marketing" },
           { label: "Brand Identity", href: "/services#brand-identity" },
-          { label: "Growth Marketing", href: "/services#growth-marketing" },
-          { label: "AI Integration", href: "/services#ai-integration" },
-          { label: "Launch Sprints", href: "/services#launch-sprints" },
+          { label: "Social Media", href: "/services#social-media-management" },
+          { label: "UI/UX Design", href: "/services#ui-ux-design" },
+          { label: "SEO Optimization", href: "/services#seo-optimization" },
         ],
       },
       {
@@ -344,16 +344,16 @@ export const site = {
           { label: "Work", href: "/work" },
           { label: "Process", href: "/process" },
           { label: "About", href: "/about" },
-          { label: "Writing", href: "/blog" },
+          { label: "Blog", href: "/blog" },
           { label: "Contact", href: "/contact" },
         ],
       },
       {
         title: "Resources",
         links: [
-          { label: "The 30-Day Playbook", href: "/blog/the-30-day-launch-playbook" },
-          { label: "Case studies", href: "/work" },
+          { label: "Case Studies", href: "/work" },
           { label: "FAQ", href: "/process#faq" },
+          { label: "Blog", href: "/blog" },
         ],
       },
     ],
@@ -364,36 +364,36 @@ export const site = {
       { label: "Dribbble", href: "https://dribbble.com/launchhpad" },
     ],
     legal: [],
-    copyright: "(c) LaunchhPad Studio, Inc. All rights reserved.",
+    copyright: "(c) 2025 LaunchhPad. All rights reserved.",
   },
 
   contact: {
     eyebrow: "Contact",
-    headline: "Tell us what you're building.",
+    headline: "Tell us about your project.",
     subhead:
-      "Send a few lines about the project, the timeline, and what success looks like. We reply in one business day. If we cannot help, we will say so on the first call and point you somewhere better.",
+      "Send us a brief about what you need — a website, marketing, branding, or all three. We reply within 24 hours with a clear next step.",
     emailLabel: "Or email us directly",
     email: "hello@launchhpad.com",
     form: {
       nameLabel: "Your name",
-      emailLabel: "Work email",
-      companyLabel: "Company",
+      emailLabel: "Email address",
+      companyLabel: "Company / Brand",
       budgetLabel: "Budget range",
-      messageLabel: "What are you building?",
-      submitLabel: "Send",
-      successHeadline: "Got it. Talk soon.",
+      messageLabel: "Tell us about your project",
+      submitLabel: "Send Message",
+      successHeadline: "Message sent!",
       successBody:
-        "We will reply within one business day from a real person, not a sequence. Check your spam folder if you do not see us.",
+        "We will get back to you within 24 hours. Check your inbox (and spam folder, just in case).",
       budgetOptions: [
-        "Under $25k",
-        "$25k - $75k",
-        "$75k - $150k",
-        "$150k - $400k",
-        "$400k+",
+        "Under $1,500",
+        "$1,500 - $5,000",
+        "$5,000 - $15,000",
+        "$15,000 - $50,000",
+        "$50,000+",
         "Not sure yet",
       ],
     },
-    responseTime: "Average reply time: 4 hours during business days.",
+    responseTime: "Average reply time: under 24 hours.",
   },
 } as const satisfies Site;
 
