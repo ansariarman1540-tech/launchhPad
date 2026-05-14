@@ -85,7 +85,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             </div>
 
             <div className="lg:col-span-5">
-              <div className="flex h-full flex-col rounded-3xl border border-primary/30 bg-gradient-to-br from-[color:var(--color-primary-deep)]/30 via-surface-1 to-surface-1 p-8">
+              <div className="flex h-full flex-col rounded-3xl border border-primary/30 bg-gradient-to-br from-primary-deep/30 via-surface-1 to-surface-1 p-8">
                 <span className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
                   Outcome
                 </span>

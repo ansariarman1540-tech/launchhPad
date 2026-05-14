@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         <article className="prose-custom mx-auto max-w-3xl">
           <MDX source={content} />
 
-          <div className="mt-16 rounded-3xl border border-primary/20 bg-gradient-to-br from-[color:var(--color-primary-deep)]/30 via-surface-1 to-surface-1 p-8 shadow-[0_0_40px_-12px_rgba(124,58,237,0.15)] sm:p-10">
+          <div className="mt-16 rounded-3xl border border-primary/20 bg-gradient-to-br from-primary-deep/30 via-surface-1 to-surface-1 p-8 shadow-[0_0_40px_-12px_rgba(124,58,237,0.15)] sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
               What now?
             </p>

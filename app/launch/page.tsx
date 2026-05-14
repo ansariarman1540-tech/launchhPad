@@ -187,7 +187,7 @@ export default function LaunchPage() {
 
       {/* Final CTA */}
       <Section>
-        <div className="mx-auto max-w-2xl rounded-3xl border border-primary/30 bg-gradient-to-br from-[color:var(--color-primary-deep)]/30 via-surface-1 to-surface-1 p-10 text-center sm:p-14">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-primary/30 bg-gradient-to-br from-primary-deep/30 via-surface-1 to-surface-1 p-10 text-center sm:p-14">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
             Be first in line.
           </h2>

@@ -8,13 +8,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-deep)] focus-visible:outline-[color:var(--color-primary)]",
+          "bg-primary text-white hover:bg-primary-deep focus-visible:outline-primary",
         secondary:
-          "bg-[color:var(--color-surface-1)] text-[color:var(--color-fg)] hover:bg-[color:var(--color-surface-2)]",
+          "bg-surface-1 text-fg hover:bg-surface-2",
         ghost:
-          "bg-transparent text-[color:var(--color-fg)] hover:bg-[color:var(--color-surface-1)]",
+          "bg-transparent text-fg hover:bg-surface-1",
         outline:
-          "border border-[color:var(--color-border)] bg-transparent text-[color:var(--color-fg)] hover:bg-[color:var(--color-surface-1)]",
+          "border border-border bg-transparent text-fg hover:bg-surface-1",
       },
       size: {
         sm: "h-8 px-3 text-sm",

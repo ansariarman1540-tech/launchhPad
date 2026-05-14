@@ -16,7 +16,7 @@ export function CTASection() {
         <div
           className={cn(
             "relative isolate overflow-hidden rounded-3xl",
-            "border border-primary/20 bg-gradient-to-br from-[color:var(--color-primary-deep)]/40 via-surface-1 to-bg",
+            "border border-primary/20 bg-gradient-to-br from-primary-deep/40 via-surface-1 to-bg",
             "px-6 py-16 sm:px-12 sm:py-20",
             "shadow-[0_0_60px_-12px_rgba(124,58,237,0.2)]",
           )}

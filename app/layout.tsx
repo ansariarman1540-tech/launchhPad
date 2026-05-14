@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-[color:var(--color-bg)] text-[color:var(--color-fg)] antialiased">
+      <body className="bg-bg text-fg antialiased">
         <ThemeProvider>
           <SkipLink />
           <div className="flex min-h-screen flex-col">
