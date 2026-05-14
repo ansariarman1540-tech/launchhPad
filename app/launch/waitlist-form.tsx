@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useActionState } from "react";
+import React, { useState } from "react";
 import { CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { joinWaitlist, type WaitlistState } from "./actions";
 
-const initialState: WaitlistState = { ok: false, message: "" };
-
 export function WaitlistForm() {
-  const [state, formAction, isPending] = useActionState(joinWaitlist, initialState);
+  const [state, setState] = useState<WaitlistState>({ ok: false, message: "" });
+  const [isPending, setIsPending] = useState(false);
 
   if (state.ok) {
     return (
@@ -22,8 +21,34 @@ export function WaitlistForm() {
     );
   }
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsPending(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    // Honeypot
+    const honeypot = formData.get("website_url") as string;
+    if (honeypot && honeypot.trim().length > 0) {
+      setState({ ok: true, message: "You're on the list." });
+      setIsPending(false);
+      return;
+    }
+
+    const email = formData.get("email") as string;
+    if (!email || !email.includes("@")) {
+      setState({ ok: false, message: "Enter a valid email address." });
+      setIsPending(false);
+      return;
+    }
+
+    const result = await joinWaitlist(email);
+    setState(result);
+    setIsPending(false);
+  }
+
   return (
-    <form action={formAction} noValidate className="flex flex-col gap-3 sm:flex-row">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 sm:flex-row">
       {/* Honeypot */}
       <div aria-hidden="true" className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0">
         <label htmlFor="website_url">Website</label>
@@ -40,19 +65,11 @@ export function WaitlistForm() {
           inputMode="email"
           required
           aria-label="Email address"
-          aria-invalid={!state.ok && state.message ? true : undefined}
-          aria-describedby={!state.ok && state.message ? "waitlist-error" : undefined}
           className="h-12 pr-4 text-base sm:h-14 sm:text-lg"
         />
       </div>
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={isPending}
-        aria-busy={isPending}
-        className="h-12 gap-2 sm:h-14 sm:px-8"
-      >
+      <Button type="submit" size="lg" disabled={isPending} aria-busy={isPending} className="h-12 gap-2 sm:h-14 sm:px-8">
         {isPending ? (
           <>
             <Loader2 className="size-4 animate-spin" aria-hidden="true" />
